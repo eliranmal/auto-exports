@@ -1,0 +1,26 @@
+{
+  "name": "auto-exports",
+  "version": "0.1.0",
+  "description": "creates a module.exports map for all modules in a directory",
+  "main": "auto-exports.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eliranmal/auto-exports.git"
+  },
+  "keywords": [
+    "utility",
+    "nodejs",
+    "auto-export",
+    "module",
+    "exports"
+  ],
+  "author": "Eliran Malka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eliranmal/auto-exports/issues"
+  },
+  "homepage": "https://github.com/eliranmal/auto-exports#readme"
+}
