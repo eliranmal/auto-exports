@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/eliranmal/auto-exports/issues"
   },
-  "homepage": "https://github.com/eliranmal/auto-exports#readme"
+  "homepage": "https://github.com/eliranmal/auto-exports#readme",
+  "dependencies": {
+    "lodash.camelcase": "^4.3.0"
+  }
 }
