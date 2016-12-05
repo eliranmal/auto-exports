@@ -5,7 +5,9 @@
 
 ## installation
 
-    npm i auto-modules -S
+```shell
+npm i auto-modules -S
+```
 
 
 ## usage
@@ -28,18 +30,21 @@ of proxy.
 
 ### just auto load all modules
 
-    const autoExports = require('auto-exports');
-    // ...
-    module.exports = autoExports(__dirname);
+```javascript
+const autoExports = require('auto-exports');
+// ...
+module.exports = autoExports(__dirname);
+```
 
 ### modify each loaded module
 
-    // ...
-    module.exports = autoExports(__dirname, (moduleName, module) => {
-        return new Proxy(module, {
-            get (target, key) {
-                return Reflect.has(target, key) ? Reflect.get(target, key) : `${moduleName}'s got no ${key}`;
-            }
-        });
+```javascript
+// ...
+module.exports = autoExports(__dirname, (moduleName, module) => {
+    return new Proxy(module, {
+        get (target, key) {
+            return Reflect.has(target, key) ? Reflect.get(target, key) : `${moduleName}'s got no ${key}`;
+        }
     });
-
+});
+```
