@@ -11,7 +11,7 @@
 ## usage
 
 this module exports a single function, which synchronously transforms 
-module names found in a path into an dictionary suited for module.exports, 
+module names found in a path into a dictionary suited for module.exports, 
 with camel-cased function names as keys and loaded modules as values.
 
 this function accepts the modules directory path as the first argument, 
