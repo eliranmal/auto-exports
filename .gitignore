@@ -1,0 +1,15 @@
+
+# IDE
+*.iml
+.idea/
+*.ipr
+*.iws
+out/
+.idea_modules/
+
+# OS
+.DS_Store
+
+# node.js/npm
+node_modules/
+npm-debug.log
