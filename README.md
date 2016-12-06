@@ -6,7 +6,7 @@
 ## installation
 
 ```shell
-npm i auto-modules -S
+npm i auto-exports -S
 ```
 
 
