@@ -1,6 +1,6 @@
 # auto-exports
 
-> creates a module.exports map for all modules in a directory
+> creates a `module.exports` map for all modules in a directory
 
 
 ## installation
@@ -12,9 +12,11 @@ npm i auto-modules -S
 
 ## usage
 
-this module exports a single function, which synchronously transforms 
-module names found in a path into a dictionary suited for module.exports, 
-with camel-cased function names as keys and loaded modules as values.
+this module exports (no pun intended) a single function, which 
+synchronously transforms all modules in a directory (*except for `index.js`!*) 
+into a dictionary suited for `module.exports`. 
+the keys in this dictionary will be the camel-cased module names, and 
+the values will hold the loaded modules.
 
 this function accepts the modules directory path as the first argument, 
 and a module handler as the second.
