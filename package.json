@@ -11,11 +11,18 @@
     "url": "git+https://github.com/eliranmal/auto-exports.git"
   },
   "keywords": [
-    "utility",
+    "node",
     "nodejs",
-    "auto-export",
+    "utility",
+    "require",
+    "load",
+    "loader",
+    "auto",
+    "export",
     "module",
-    "exports"
+    "exports",
+    "module.exports",
+    "module-exports"
   ],
   "author": "Eliran Malka",
   "license": "MIT",
