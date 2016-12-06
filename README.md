@@ -19,17 +19,20 @@ the keys in this dictionary will be the camel-cased module names, and
 the values will hold the loaded modules.
 
 this function accepts the modules directory path as the first argument, 
-an optional list of module names to exclude as the second, and an 
-optional module handler as the third.
+a list of module names to exclude as the second, and a module interceptor 
+as the third. all arguments are optional.
+
+if the directory path is omitted, it is auto-resolved to the path of the 
+requiring module (same as passing `__dirname`).
 
 the module exclusions list is an array of modules names that will be 
 excluded from the resulted dictionary.
 
-the module handler is a function that's called after each module has 
+the module interceptor is a function that's called after each module has 
 been loaded. it receives two arguments: the module name, and the loaded 
 module, and may return the module after modifying it. useful if you want 
 to add a method to each module, or wrap all modules with the same type 
-of proxy.
+of proxy, or to [insert your idea here].
 
 
 ## examples
@@ -57,6 +60,20 @@ module.exports = autoExports(__dirname);
     barBar: [Function]
 }
 ```
+
+
+#### auto-magically load all modules!
+
+###### index.js
+
+```javascript
+const autoExports = require('auto-exports');
+module.exports = autoExports(); // look, mummy, no args!
+```
+
+###### result
+
+*same as before*
 
 
 #### exclude some modules

@@ -20,8 +20,9 @@ describe('auto-exports', function () {
 
     describe('when called with no arguments', function () {
 
-        it('should throw an error', function () {
-            assert.throws(autoExports, Error);
+        it(`should resolve the path to the directory of the requiring module`, function () {
+            result = autoExports();
+            assert.ok('autoExports' in result);
         });
     });
 
@@ -32,7 +33,7 @@ describe('auto-exports', function () {
             result = autoExports(fixturesPath);
         });
 
-        it('should not include the "index.js" file', function () {
+        it('should not include the "index" module', function () {
             assert.ok(!('index' in result));
         });
 
