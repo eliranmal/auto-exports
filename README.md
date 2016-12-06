@@ -13,13 +13,17 @@ npm i auto-exports -S
 ## usage
 
 this module exports (no pun intended) a single function, which 
-synchronously transforms all modules in a directory (*except for `index.js`!*) 
-into a dictionary suited for `module.exports`. 
+synchronously transforms all JS modules in a directory (*except for 
+`index.js`!*) into a dictionary suited for `module.exports`. 
 the keys in this dictionary will be the camel-cased module names, and 
 the values will hold the loaded modules.
 
 this function accepts the modules directory path as the first argument, 
-and a module handler as the second.
+an optional list of module names to exclude as the second, and an 
+optional module handler as the third.
+
+the module exclusions list is an array of modules names that will be 
+excluded from the resulted dictionary.
 
 the module handler is a function that's called after each module has 
 been loaded. it receives two arguments: the module name, and the loaded 
@@ -30,15 +34,52 @@ of proxy.
 
 ## examples
 
-### just auto load all modules
+let's assume we have a directory with two files (modules); `foo-foo.js`, 
+which exports an object, and `bar-bar.js`, which exports a function.
+
+we also have an additional `index.js` file, where we call `autoExports()`.
+
+
+#### just auto load all modules
+
+###### index.js
 
 ```javascript
 const autoExports = require('auto-exports');
-// ...
 module.exports = autoExports(__dirname);
 ```
 
-### modify each loaded module
+###### result
+
+```javascript
+{
+    fooFoo: [Object],
+    barBar: [Function]
+}
+```
+
+
+#### exclude some modules
+
+###### index.js
+
+```javascript
+// ...
+module.exports = autoExports(__dirname, ['foo-foo']);
+```
+
+###### result
+
+```javascript
+{
+    barBar: [Function]
+}
+```
+
+
+#### modify each loaded module
+
+###### index.js
 
 ```javascript
 // ...
@@ -49,4 +90,34 @@ module.exports = autoExports(__dirname, (moduleName, module) => {
         }
     });
 });
+```
+
+###### result
+
+```javascript
+{
+    fooFoo: [Proxy],
+    barBar: [Proxy]
+}
+```
+
+
+#### exclude some modules and modify each loaded module
+
+###### index.js
+
+```javascript
+// ...
+module.exports = autoExports(__dirname, ['foo-foo'], (moduleName, module) => {
+    return Object.defineProperty(module, 'wat', { value: moduleName });
+});
+```
+
+###### result
+
+```javascript
+{
+    barBar: [Object]
+}
+// barBar.wat -> 'bar-bar'
 ```
