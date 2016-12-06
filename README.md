@@ -13,10 +13,10 @@ npm i auto-exports -S
 ## usage
 
 this module exports (no pun intended) a single function, which 
-synchronously transforms all JS modules in a directory (*except for 
-`index.js`!*) into a dictionary suited for `module.exports`. 
-the keys in this dictionary will be the camel-cased module names, and 
-the values will hold the loaded modules.
+synchronously transforms all modules in a directory (*except for 
+`index.js` and `index.node`!*) into a dictionary suited for `module.exports`. 
+the keys in this dictionary are camel-cased module names, and the values 
+hold the loaded modules.
 
 this function accepts the modules directory path as the first argument, 
 a list of module names to exclude as the second, and a module interceptor 
