@@ -5,9 +5,9 @@
   "main": "./lib/auto-exports.js",
   "scripts": {
     "test": "mocha",
-    "patch": "npm version patch && npm publish && git push && echo '- - - don't forget to tag the release on github! - - -'",
-    "minor": "npm version minor && npm publish && git push && echo '- - - don't forget to tag the release on github! - - -'",
-    "major": "npm version major && npm publish && git push && echo '- - - don't forget to tag the release on github! - - -'"
+    "patch": "npm version patch && npm publish && git push && echo \"- - - don't forget to tag the release on github! - - -\"",
+    "minor": "npm version minor && npm publish && git push && echo \"- - - don't forget to tag the release on github! - - -\"",
+    "major": "npm version major && npm publish && git push && echo \"- - - don't forget to tag the release on github! - - -\""
   },
   "repository": {
     "type": "git",
