@@ -67,7 +67,7 @@ module.exports = autoExports(__dirname);
 ###### index.js
 
 ```javascript
-const autoExports = require('auto-exports');
+// ...
 module.exports = autoExports(); // look, mummy, no args!
 ```
 
