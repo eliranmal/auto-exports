@@ -103,7 +103,7 @@ module.exports = autoExports(__dirname, ['foo-foo']);
 module.exports = autoExports(__dirname, (moduleName, module) => {
     return new Proxy(module, {
         get (target, key) {
-            return Reflect.has(target, key) ? Reflect.get(target, key) : `${moduleName}'s got no ${key}`;
+            return Reflect.get(target, key) || `${moduleName}'s got no ${key}`;
         }
     });
 });
@@ -125,7 +125,7 @@ module.exports = autoExports(__dirname, (moduleName, module) => {
 
 ```javascript
 // ...
-module.exports = autoExports(__dirname, ['foo-foo'], (moduleName, module) => {
+module.exports = autoExports(__dirname, ['bar-bar'], (moduleName, module) => {
     return Object.defineProperty(module, 'wat', { value: moduleName });
 });
 ```
@@ -134,7 +134,7 @@ module.exports = autoExports(__dirname, ['foo-foo'], (moduleName, module) => {
 
 ```javascript
 {
-    barBar: [Object]
+    fooFoo: [Object]
 }
-// barBar.wat -> 'bar-bar'
+// fooFoo.wat -> 'foo-foo'
 ```
