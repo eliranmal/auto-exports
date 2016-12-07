@@ -4,7 +4,10 @@
   "description": "creates a module.exports map for all modules in a directory",
   "main": "./lib/auto-exports.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "patch": "npm version patch && npm publish",
+    "minor": "npm version minor && npm publish",
+    "major": "npm version major && npm publish"
   },
   "repository": {
     "type": "git",
