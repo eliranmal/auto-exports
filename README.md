@@ -3,6 +3,15 @@
 > creates a `module.exports` map for all modules in a directory
 
 
+## TL;DR
+
+here's the gist of it, in a one-liner:
+
+```javascript
+module.exports = require('auto-exports')();
+```
+
+
 ## installation
 
 ```shell
