@@ -2,6 +2,8 @@
 
 > creates a `module.exports` map for all modules in a directory
 
+[![NPM][1]][2]
+
 
 ## TL;DR
 
@@ -150,3 +152,10 @@ module.exports = autoExports(__dirname, ['bar-bar'], (moduleName, module) => {
 }
 // fooFoo.wat -> 'foo-foo'
 ```
+
+
+
+
+
+[1]: https://img.shields.io/npm/v/auto-exports.svg?style=flat-square
+[2]: https://www.npmjs.com/package/auto-exports
