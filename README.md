@@ -48,10 +48,11 @@ of proxy, or to [insert your idea here].
 
 ## examples
 
-let's assume we have a directory with two files (modules); `foo-foo.js`, 
+let's assume we have a directory with two modules; `foo-foo.js`, 
 which exports an object, and `bar-bar.js`, which exports a function.
 
-we also have an additional `index.js` file, where we call `autoExports()`.
+in that directory, we also have an additional `index.js` file, where we 
+call `autoExports()`.
 
 
 #### just auto load all modules
