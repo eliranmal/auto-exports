@@ -3,6 +3,9 @@
   "version": "0.3.10",
   "description": "creates a module.exports map for all modules in a directory",
   "main": "./lib/auto-exports.js",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "test": "mocha",
     "release": "bin/release.sh",
