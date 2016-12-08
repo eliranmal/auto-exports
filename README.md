@@ -7,6 +7,8 @@
 
 here's the gist of it, in a one-liner:
 
+###### index.js
+
 ```javascript
 module.exports = require('auto-exports')();
 ```
