@@ -7,7 +7,6 @@ const assert = require('assert');
 describe('auto-exports', function () {
 
     const autoExports = require('../lib/auto-exports');
-
     const fixturesPath = path.join(__dirname, 'fixtures');
 
     const watExtendModuleHandler = (moduleName, module) => {
@@ -18,11 +17,23 @@ describe('auto-exports', function () {
     let result;
 
 
+    describe('when required', function () {
+
+        describe('from within the index directory', function () {
+
+            it(`should not fail`, function () {
+                const self = require('./fixtures/self');
+                assert.ok(self);
+            });
+        });
+    });
+
+    
     describe('when called with no arguments', function () {
 
         it(`should resolve the path to the directory of the requiring module`, function () {
             result = autoExports();
-            assert.ok('autoExports' in result);
+            assert('autoExports' in result);
         });
     });
 
@@ -34,15 +45,15 @@ describe('auto-exports', function () {
         });
 
         it('should not include the "index" module', function () {
-            assert.ok(!('index' in result));
+            assert(!('index' in result));
         });
 
-        it('should include two modules', function () {
-            assert.equal(Object.keys(result).length, 2);
+        it('should include three modules', function () {
+            assert.equal(Object.keys(result).length, 3);
         });
 
         it('should include the "foo-foo" module, with api name "fooFoo"', function () {
-            assert.ok('fooFoo' in result);
+            assert('fooFoo' in result);
         });
     });
 
@@ -53,11 +64,11 @@ describe('auto-exports', function () {
         });
 
         it('should exclude the "foo-foo" module', function () {
-            assert.ok(!('fooFoo' in result));
+            assert(!('fooFoo' in result));
         });
 
         it('should include the "bar-bar" module', function () {
-            assert.ok('barBar' in result);
+            assert('barBar' in result);
         });
     });
 

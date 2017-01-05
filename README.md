@@ -154,6 +154,13 @@ module.exports = autoExports(__dirname, ['bar-bar'], (moduleName, module) => {
 ```
 
 
+## gotchas
+
+- when requiring the auto-exported directory from within that directory, 
+the resulted exports object structure is malformed. this happens due 
+the cyclic dependency.
+
+
 
 
 
