@@ -1,6 +1,6 @@
 {
   "name": "auto-exports",
-  "version": "0.3.11",
+  "version": "0.3.12",
   "description": "creates a module.exports map for all modules in a directory",
   "main": "./lib/auto-exports.js",
   "files": [
